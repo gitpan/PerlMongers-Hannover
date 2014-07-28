@@ -1,9 +1,0 @@
-name    = PerlMongers-Hannover
-author  = Paul Cochrane <ptc@hannover.pm>
-license = Perl_5
-copyright_holder = Hannover Perl Mongers
-copyright_year   = 2014
-
-version = 0.001
-
-[@Basic]
