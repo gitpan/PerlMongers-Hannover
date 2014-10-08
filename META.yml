@@ -4,12 +4,15 @@ author:
   - 'Paul Cochrane <ptc@hannover.pm>'
 build_requires: {}
 configure_requires:
-  ExtUtils::MakeMaker: '6.30'
+  ExtUtils::MakeMaker: '0'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141520'
+generated_by: 'Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: '1.4'
 name: PerlMongers-Hannover
-version: '0.01'
+requires:
+  Capture::Tiny: '0'
+  Test::More: '0'
+version: '0.02'
