@@ -16,4 +16,4 @@ requires:
   Capture::Tiny: '0'
   Test::More: '0'
   perl: v5.10.1
-version: '0.04'
+version: 0.5.5
