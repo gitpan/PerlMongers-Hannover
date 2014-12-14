@@ -1,3 +1,5 @@
+# ABSTRACT: prints information about Hannover.pm to the screen
+
 package PerlMongers::Hannover;
 
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
@@ -10,94 +12,13 @@ require Exporter;
 @EXPORT_OK = qw(info);
 
 use v5.10.1;
+use Pod::Text;
 
 sub info {
-    system('perldoc', __PACKAGE__);
+    my $parser = Pod::Text->new(sentence => 0, width => 78);
+    open my $fh, "<", "README.pod" or die "$!";
+    $parser->parse_from_file($fh);
+    close $fh;
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-PerlMongers::Hannover - Hannover Perl Mongers
-
-=head1 VERSION
-
-Version 0.5.5
-
-=head1 SYNOPSIS
-
-    use PerlMongers::Hannover qw(info);
-
-    info();
-
-=head2 Website
-
-http://hannover.pm
-
-=head2 IRC Channel
-
-irc.perl.org #hannover.pm
-
-=head2 Mailing List
-
-http://mail.pm.org/mailman/listinfo/hannover-pm
-
-=head2 Email
-
-L<mailto:hannover-pm@pm.org>
-
-=head2 Meetups
-
-Every odd calendar week Tuesday at 6pm; date and location details announced
-via Twitter, email and via the web site:
-
-http://hannover.pm/treffen
-
-=head2 Blog
-
-http://hannover.pm/blog
-
-=head2 Twitter
-
-https://twitter.com/Hannover_pm
-
-=head2 GitHub
-
-https://github.com/Hannover-pm
-
-=head1 METHODS
-
-=head2 info
-
-Returns information about the Hannover Perl Mongers.
-
-=head1 SUPPORT
-
-=head2 Source Code
-
-The code repository for this package is available at:
-
-L<https://github.com/paultcochrane/PerlMongers-Hannover>
-
-    git clone https://github.com/paultcochrane/PerlMongers-Hannover.git
-
-=head1 AUTHOR
-
-Paul Cochrane <paul@hannover.pm>
-
-=head1 NOTES
-
-Inspired by Lynn Root's I<pyladies> lightning talk at EuroPython 2014 and
-modeled after C<PerlMongers::Bangalore>.
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2014 by Hannover Perl Mongers.
-
-This program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
-
-=cut

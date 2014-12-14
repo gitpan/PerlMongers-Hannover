@@ -1,10 +1,12 @@
 ---
-abstract: 'Hannover Perl Mongers'
+abstract: 'prints information about Hannover.pm to the screen'
 author:
   - 'Paul Cochrane <ptc@hannover.pm>'
-build_requires: {}
+build_requires:
+  perl: v5.10.1
 configure_requires:
   ExtUtils::MakeMaker: '0'
+  perl: v5.10.1
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060'
 license: perl
@@ -14,6 +16,7 @@ meta-spec:
 name: PerlMongers-Hannover
 requires:
   Capture::Tiny: '0'
+  Pod::Text: '0'
   Test::More: '0'
   perl: v5.10.1
-version: 0.5.5
+version: 0.6.5

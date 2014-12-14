@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker ;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Hannover Perl Mongers",
+  "ABSTRACT" => "prints information about Hannover.pm to the screen",
   "AUTHOR" => "Paul Cochrane <ptc\@hannover.pm>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
@@ -21,9 +21,10 @@ my %WriteMakefileArgs = (
   "NAME" => "PerlMongers::Hannover",
   "PREREQ_PM" => {
     "Capture::Tiny" => 0,
+    "Pod::Text" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.5.5",
+  "VERSION" => "0.6.5",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -32,6 +33,7 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Capture::Tiny" => 0,
+  "Pod::Text" => 0,
   "Test::More" => 0
 );
 
